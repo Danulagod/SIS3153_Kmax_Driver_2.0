@@ -599,7 +599,7 @@ DLLEXPORT JNIEXPORT jint JNICALL Java_SIS3153_nativeClose(JNIEnv *env, jobject o
 DLLEXPORT JNIEXPORT jint JNICALL Java_SIS3153_nativeReadInt(JNIEnv *env, jobject ob, jlong addr, jint func, jintArray buf, jint offset, jint count){
 
 	uint32_t VMEAddr=(addr&0xFFFFFFFF);
-	uint32_t data[count]={0};
+	static uint32_t data[4194304]={0};
 	int ret=-1;
 			
 	if(func==0x1000){
